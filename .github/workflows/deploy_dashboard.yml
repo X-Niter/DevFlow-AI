@@ -24,7 +24,12 @@ jobs:
           cd dashboard
           npm install
 
+      - name: Disable Next.js Telemetry
+      run: npx next telemetry disable
+
       - name: Build project
+        env:
+          NEXT_TELEMETRY_DISABLED: 1
         run: |
           cd dashboard
           npm run build
