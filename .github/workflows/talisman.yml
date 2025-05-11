@@ -18,6 +18,7 @@ jobs:
       - name: Install Talisman
         run: |
           curl https://thoughtworks.github.io/talisman/install.sh | bash
+          sudo mv talisman_linux_amd64 /usr/local/bin/talisman
 
       - name: Run Talisman
         run: talisman --scan
