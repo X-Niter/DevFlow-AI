@@ -2,7 +2,10 @@ import type { AppProps } from "next/app";
 import Head from "next/head";
 import "@/styles/globals.css";
 
-export default function MyApp({ Component, pageProps }: AppProps) {
+export default import { Toaster } from 'react-hot-toast';
+
+function MyApp({ Component, pageProps }: AppProps) {
+  <Toaster position="top-right" />
   return (
     <>
       <Head>

@@ -1,18 +1,32 @@
-import { useEffect } from "react";
+
+import Head from 'next/head'
+import toast from 'react-hot-toast'
+import { useEffect } from 'react'
 
 export default function OnboardingComplete() {
   useEffect(() => {
-    setTimeout(() => {
-      window.location.href = "/admin/releases";
-    }, 2000);
-  }, []);
+    toast.success('🎉 Setup Complete! You are now ready to explore DevFlow.')
+  }, [])
 
   return (
-    <main className="min-h-screen bg-zinc-950 text-white font-mono p-10 flex flex-col items-center justify-center">
-      <h1 className="text-4xl text-green-400 font-bold mb-4">✅ Setup Complete!</h1>
-      <p className="text-zinc-300 text-center max-w-xl">
-        DevFlow AI has been successfully installed. Redirecting to your Admin Release Panel...
-      </p>
-    </main>
-  );
+    <>
+      <Head>
+        <title>Onboarding Complete</title>
+      </Head>
+      <div className="min-h-screen bg-black flex items-center justify-center text-white">
+        <div className="text-center p-8 rounded-2xl shadow-xl border border-gray-700 bg-gray-900">
+          <h1 className="text-4xl font-bold mb-4">✅ Setup Complete</h1>
+          <p className="text-lg text-gray-300 mb-4">
+            Your DevFlow AI onboarding is now complete and your dashboard is ready to go!
+          </p>
+          <a
+            href="/admin/releases"
+            className="mt-6 inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded-xl transition"
+          >
+            Go to Admin Panel
+          </a>
+        </div>
+      </div>
+    </>
+  )
 }
