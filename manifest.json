@@ -1,0 +1,21 @@
+{
+  "name": "DevFlow AI",
+  "url": "https://your-site.dev",
+  "hook_attributes": {
+    "url": "https://your-site.dev/api/github/webhook"
+  },
+  "redirect_url": "https://your-site.dev/onboarding/complete",
+  "public": true,
+  "default_permissions": {
+    "contents": "read",
+    "issues": "write",
+    "pull_requests": "write",
+    "workflows": "write"
+  },
+  "default_events": [
+    "push",
+    "pull_request",
+    "issues",
+    "workflow_run"
+  ]
+}
