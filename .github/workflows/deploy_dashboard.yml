@@ -34,11 +34,7 @@ jobs:
           test -f talisman || { echo 'Talisman binary not found after download'; exit 1; }
           chmod +x talisman
           sudo mv talisman /usr/local/bin/talisman
-          curl -sL https://github.com/thoughtworks/talisman/releases/download/v1.37.0/talisman_linux_amd64 -o talisman || { echo 'Download failed'; exit 1; }
-          chmod +x talisman
-          sudo mv talisman /usr/local/bin/talisman
-          curl -sL https://github.com/thoughtworks/talisman/releases/download/v1.37.0/talisman_linux_amd64 -o talisman || { echo 'Download failed'; exit 1; }
-          fi
+          test -f talisman || { echo 'Talisman binary not found after download'; exit 1; }
 
       - name: Verify Talisman
         run: talisman version
