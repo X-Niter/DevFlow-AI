@@ -1,4 +1,4 @@
-// components/MyComponent.tsx
+// dashboard/components/MyComponent.tsx
 import React from 'react'
 import Image from 'next/image'
 
