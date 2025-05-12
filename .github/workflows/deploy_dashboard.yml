@@ -5,37 +5,31 @@ on:
     branches:
       - main
 
-permissions:
-  contents: write
-
 jobs:
-  build:
+  build-and-deploy:
     runs-on: ubuntu-latest
+
     steps:
       - uses: actions/checkout@v3
 
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: 20
+          node-version: '18'
 
       - name: Install dependencies
-        run: |
-          cd dashboard
-          npm install
+        run: npm ci
 
-      - name: Build project
-        run: |
-          cd dashboard
-          npm run build
+      - name: Build
+        run: npm run build --if-present
 
-      - name: Export static site
+      - name: Download and install Talisman
         run: |
-          cd dashboard
-          npm run export || npx next export
+          curl -sL             https://github.com/thoughtworks/talisman/releases/download/v1.29.0/talisman_linux_amd64             -o talisman
+          chmod +x talisman
+          sudo mv talisman /usr/local/bin/talisman
 
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: dashboard/out
+      - name: Verify Talisman
+        run: talisman version
+
+      # …your existing deploy-to-pages step here…
