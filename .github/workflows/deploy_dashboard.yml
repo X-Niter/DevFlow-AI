@@ -9,14 +9,12 @@ jobs:
 defaults:
   run:
     working-directory: dashboard
-        working-directory: dashboard
-    steps:
 - name: Check out code
   uses: actions/checkout@v3
 - name: Setup Node.js
   uses: actions/setup-node@v3
   with:
-          node-version: '18'
+    node-version: '18'
 - name: Install dependencies
   run: npm install
 - name: Build
