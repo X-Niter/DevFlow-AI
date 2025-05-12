@@ -1,5 +1,4 @@
 import Link from 'next/link'
-// eslint-disable-next-line @next/next/no-html-link-for-pages
 export default function Custom404() {
   return (
     <main className="min-h-screen bg-zinc-950 text-white flex flex-col items-center justify-center p-10 font-mono">
