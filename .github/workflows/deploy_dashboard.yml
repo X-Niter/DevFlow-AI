@@ -20,19 +20,16 @@ jobs:
           node-version: 20
 
       - name: Install dependencies
-        run: |
-          cd dashboard
-          npm install
+        working-directory: dashboard
+        run: npm install
 
       - name: Build project
-        run: |
-          cd dashboard
-          npm run build
+        working-directory: dashboard
+        run: npm run build
 
       - name: Export static site
-        run: |
-          cd dashboard
-          npm run export || npx next export
+        working-directory: dashboard
+        run: npm run export || npx next export
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
