@@ -29,21 +29,5 @@ jobs:
           talisman --version || { echo 'Talisman not installed correctly'; exit 1; }
       - name: Verify Talisman
         run: echo "Step placeholder to avoid error"
-      - name: Cache node modules
-        uses: actions/cache@v3
-        with:
-          path: ~/.npm
-          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-node-
-      - name: Build and Export Static Site
-        run: |
-          npm install
-          npm run build
-          npm run export
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
-        with:
-          publish_branch: gh-pages
-          publish_dir: dashboard/out
-          github_token: ${{ secrets.GITHUB_TOKEN }}

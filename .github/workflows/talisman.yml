@@ -17,10 +17,7 @@ jobs:
 
       - name: Install Talisman
         run: |
-      run: |
-        curl https://thoughtworks.github.io/talisman/install.sh | bash
-        chmod +x .git/hooks/pre-push || true
-        ./.git/hooks/pre-push || echo 'Talisman hook ready'
+          curl https://thoughtworks.github.io/talisman/install.sh | bash
           sudo mv talisman_linux_amd64 /usr/local/bin/talisman
 
       - name: Run Talisman
