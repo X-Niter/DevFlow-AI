@@ -31,3 +31,7 @@ jobs:
         run: echo "Step placeholder to avoid error"
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
+        with:
+          publish_branch: gh-pages
+          publish_dir: public
+          github_token: ${{ secrets.GITHUB_TOKEN }}
