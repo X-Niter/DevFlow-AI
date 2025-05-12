@@ -10,9 +10,6 @@ jobs:
       run:
         working-directory: dashboard
     steps:
-defaults:
-        run:
-    working-directory: dashboard
       - name: Check out code
         uses: actions/checkout@v3
       - name: Setup Node.js
