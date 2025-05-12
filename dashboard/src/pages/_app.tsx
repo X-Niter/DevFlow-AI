@@ -1,18 +1,12 @@
-import type { AppProps } from "next/app";
-import Head from "next/head";
-import "@/styles/globals.css";
+import '@/styles/globals.css'
+import Layout from '@/components/Layout'
+import { Toaster } from 'react-hot-toast'
 
-export default function MyApp({ Component, pageProps }: AppProps) {
+export default function MyApp({ Component, pageProps }) {
   return (
-    <>
-      <Head>
-        <title>DevFlow AI</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="theme-color" content="#000000" />
-        <meta name="description" content="AI-powered GitHub automation dashboard" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+    <Layout>
       <Component {...pageProps} />
-    </>
-  );
+      <Toaster position="top-right" />
+    </Layout>
+  )
 }
