@@ -8,7 +8,7 @@ export default function MyComponent() {
       <Image
         src="/assets/photo.jpg"
         alt="My photo"
-        width={600}    // ← adjust to your actual image size
+        width={600}
         height={400}
       />
     </div>
