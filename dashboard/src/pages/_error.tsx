@@ -8,7 +8,7 @@ function Error({ statusCode }: { statusCode?: number }) {
       <p className="text-zinc-300 mb-4">
         {statusCode ? `An error ${statusCode} occurred on server.` : "An error occurred on client."}
       </p>
-      <Link href="/devflow-dashboard/landing" className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-500">
+      <Link href="/landing" className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-500">
         Return to Landing
       </Link>
     </main>
