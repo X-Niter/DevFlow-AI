@@ -12,7 +12,17 @@ export class SmartAgent {
     console.log(`[SmartAgent] ${msg}`)
   }
 
-  // …your other methods here…
+  public decide(topic: string): string {
+    return `Decision made on: ${topic}`
+  }
+
+  public selfImprove(goal: string): string {
+    return `Self-improvement initiated for: ${goal}`
+  }
+
+  public learn(domain: string, detail: string): void {
+    this.log(`Learning in ${domain}: ${detail}`)
+  }
 }
 
 export const agent = new SmartAgent()
