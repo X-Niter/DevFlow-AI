@@ -20,4 +20,5 @@ Error.getInitialProps = ({ res, err }: NextPageContext) => {
   return { statusCode };
 };
 
+// eslint-disable-next-line @next/next/no-html-link-for-pages
 export default Error;

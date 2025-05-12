@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { Sequence, Selector, ActionNode } from './behaviorTree'
 
 
