@@ -1,4 +1,4 @@
-// dashboard/src/lib/ai/agent.ts
+// src/lib/ai/agent.ts
 import { memory as agentMemory } from './agentMemory'
 
 export class SmartAgent {
@@ -12,17 +12,7 @@ export class SmartAgent {
     console.log(`[SmartAgent] ${msg}`)
   }
 
-  public decide(topic: string): string {
-    return `Decision made on: ${topic}`
-  }
-
-  public selfImprove(goal: string): string {
-    return `Self-improvement initiated for: ${goal}`
-  }
-
-  public learn(domain: string, detail: string): void {
-    this.log(`Learning in ${domain}: ${detail}`)
-  }
+  // …your other methods here…
 }
 
 export const agent = new SmartAgent()
