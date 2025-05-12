@@ -5,9 +5,10 @@ import { agent } from '@/lib/ai/agent'
 
 export default function AdminReleases() {
   const [log, setLog] = useState<string[]>([])
+  const [decision, setDecision] = useState<string>("");
 
   useEffect(() => {
-    const decision = agent.decide('deployment system');
+    setDecision(agent.decide("deployment system"));
   const output = agent.selfImprove('optimize deployment system')
     setLog(prev => [...prev, output])
     agent.learn('deployment', 'auto-export + GitHub Pages')
