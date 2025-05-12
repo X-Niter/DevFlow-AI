@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react';
 
 import Head from 'next/head'
-import { useEffect, useState } from 'react'
 import { agent } from '@/lib/ai/agent'
 
 export default function AdminReleases() {
