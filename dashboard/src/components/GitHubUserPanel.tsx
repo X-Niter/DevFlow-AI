@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 // eslint-disable-next-line @next/next/no-img-element
 import { useEffect, useState } from "react";
 
