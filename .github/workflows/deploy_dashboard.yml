@@ -6,34 +6,38 @@ on:
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: dashboard
+    steps:
 defaults:
-  run:
+        run:
     working-directory: dashboard
-- name: Check out code
-  uses: actions/checkout@v3
-- name: Setup Node.js
-  uses: actions/setup-node@v3
-  with:
-    node-version: '18'
-- name: Install dependencies
-  run: npm install
-- name: Build
-  run: npm run build --if-present
-- name: Download and install Talisman
-  run: |
+      - name: Check out code
+        uses: actions/checkout@v3
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+      - name: Install dependencies
+        run: npm install
+      - name: Build
+        run: npm run build --if-present
+      - name: Download and install Talisman
+        run: |
           curl https://thoughtworks.github.io/talisman/install.sh | bash
           export PATH=$PATH:$HOME/.talisman/bin
           talisman --version || { echo 'Talisman not installed correctly'; exit 1; }
-- name: Verify Talisman
-  run: echo "Step placeholder to avoid error"
-- name: Deploy to GitHub Pages
-  uses: peaceiris/actions-gh-pages@v3
-  with:
-    github_token: ${{ secrets.GITHUB_TOKEN }}
-    publish_dir: ./dashboard/out
-  with:
-    github_token: ${{ secrets.GITHUB_TOKEN }}
-    publish_dir: ./dashboard/out
-  with:
-    github_token: ${{ secrets.GITHUB_TOKEN }}
-    publish_dir: dashboard/out
+      - name: Verify Talisman
+        run: echo "Step placeholder to avoid error"
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dashboard/out
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dashboard/out
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: dashboard/out
