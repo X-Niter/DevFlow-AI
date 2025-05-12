@@ -1,4 +1,4 @@
-// dashboard/src/lib/ai/agent.ts
+// src/lib/ai/agent.ts
 import { memory as agentMemory } from './agentMemory'
 
 export class SmartAgent {
@@ -14,3 +14,5 @@ export class SmartAgent {
 
   // …your other methods here…
 }
+
+export const agent = new SmartAgent()
