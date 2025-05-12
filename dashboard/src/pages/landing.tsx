@@ -22,7 +22,7 @@ export default function LandingPage() {
           <p className="text-lg text-gray-300 mb-10">
             An intelligent GitHub App for automating pull requests, workflow actions, changelogs, and more.
           </p>
-          <a href="/landing" className="inline-block rounded-2xl bg-pink-600 hover:bg-pink-500 transition px-6 py-3 text-white font-medium shadow-lg">
+          <a href="/devflow-dashboard/landing" className="inline-block rounded-2xl bg-pink-600 hover:bg-pink-500 transition px-6 py-3 text-white font-medium shadow-lg">
             Install on Your Repo
           </a>
         </main>
