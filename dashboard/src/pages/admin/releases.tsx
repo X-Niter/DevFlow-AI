@@ -8,6 +8,7 @@ export default function AdminReleases() {
 
   useEffect(() => {
     const decision = agent.decide('deployment system');
+    const decision = agent.decide('deployment system');
   const output = agent.selfImprove('optimize deployment system')
     setLog(prev => [...prev, output])
     agent.learn('deployment', 'auto-export + GitHub Pages')
