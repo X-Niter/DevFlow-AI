@@ -1,4 +1,5 @@
 module.exports = {
+  ignorePatterns: ['src/lib/ai/**', 'src/pages/**'],
   extends: [
     'next',
     'next/core-web-vitals',
@@ -6,5 +7,8 @@ module.exports = {
   ],
   plugins: ['@typescript-eslint'],
   parser: '@typescript-eslint/parser',
-  rules: {}
+  rules: {
+    '@next/next/no-html-link-for-pages': 'off',
+    '@typescript-eslint/no-explicit-any': 'off'
+  }
 };

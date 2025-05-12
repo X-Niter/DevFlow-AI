@@ -21,11 +21,12 @@ export default function AdminReleases() {
       <div className="min-h-screen bg-black text-white p-10 space-y-4">
         <h1 className="text-3xl font-bold">📦 Release Dashboard</h1>
         <p className="text-gray-300">Welcome to the Smart Agent Console.</p>
-        <pre>Decision: {decision}\n className="bg-gray-900 p-4 rounded-xl border border-gray-700">
-          {log.map((line, i) => (
-            <div key={i}>{line}</div>
-          ))}
-        </pre>
+        <pre className="bg-gray-900 p-4 rounded-xl border border-gray-700 whitespace-pre-wrap">
+            Decision: {decision}
+            {log.map((line, i) => (
+              <div key={i}>{line}</div>
+            ))}
+          </pre>
       </div>
     </>
   )
