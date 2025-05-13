@@ -5,4 +5,10 @@ module.exports = {
   assetPrefix: isProd ? '/devflow-dashboard/' : '',
   basePath: isProd ? '/devflow-dashboard' : '',
   trailingSlash: true,
+  exportPathMap: async (defaultMap) => ({
+      '/landing': defaultMap['/landing'],
+      '/admin': defaultMap['/admin'],
+      '/onboarding': defaultMap['/onboarding'],
+      // add any other pages here
+    }),
 };

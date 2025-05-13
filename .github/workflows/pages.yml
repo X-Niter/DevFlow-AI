@@ -31,6 +31,9 @@ jobs:
           NODE_ENV: production
         run: npm run build
 
+      - name: Copy landing to root index
+        run: cp out/devflow-dashboard/landing/index.html out/devflow-dashboard/index.html
+
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v1
         with:
