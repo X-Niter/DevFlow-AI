@@ -1,0 +1,16 @@
+name: AutoFix
+on:
+  push:
+    paths:
+      - '**/*.py'
+  workflow_dispatch:
+
+jobs:
+  autofix:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run AI AutoFix
+        run: |
+          pip install openai
+          python .github/scripts/ai_engine.py
