@@ -1,6 +1,0 @@
-# .github/actions/upload-artifact/action.yml
-name: "Upload Artifact (stub)"
-description: "A no-op stub to satisfy GitHub Pages default workflow"
-runs:
-  using: "composite"
-  steps: []
