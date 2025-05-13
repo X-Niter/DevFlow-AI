@@ -30,4 +30,4 @@ jobs:
       - name: Verify Talisman
         run: echo "Step placeholder to avoid error"
       - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
+        uses: peaceiris/actions-gh-pages@v4
