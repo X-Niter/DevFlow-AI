@@ -81,7 +81,10 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./out
+          path: ./out/devflow-dashboard
+      - name: Copy landing to root
+        run: cp out/devflow-dashboard/landing/index.html out/devflow-dashboard/index.html
+
 
   # Deployment job
   deploy:
