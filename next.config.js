@@ -1,11 +1,8 @@
-/** @type {import('next').NextConfig} */
 const isProd = process.env.NODE_ENV === 'production';
 
-const nextConfig = {
-  output: 'export',
+module.exports = {
   reactStrictMode: true,
-  trailingSlash: true,
+  assetPrefix: isProd ? '/devflow-dashboard/' : '',
   basePath: isProd ? '/devflow-dashboard' : '',
+  trailingSlash: true,
 };
-
-module.exports = nextConfig;
